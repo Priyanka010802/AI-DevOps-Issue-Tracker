@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-900: #0a0a0a;
+  --color-dark-800: #121212;
+  --color-dark-700: #1e1e1e;
+  --color-dark-600: #2d2d2d;
+  --color-dark-500: #3d3d3d;
+  
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  
+  --color-devops-green: #10b981;
+  --color-devops-red: #ef4444;
+  --color-devops-yellow: #f59e0b;
+  --color-devops-blue: #3b82f6;
+  
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-gray-200 font-sans selection:bg-primary-500 selection:text-white;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-600 rounded-full transition-colors;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-dark-500;
+  }
+}
+
+@layer components {
+  /* Common glass effect properties */
+  .glass {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+  }
+  
+  .glass-card {
+    /* Inline glass properties to avoid Tailwind v4 @apply issues */
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .glass-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-primary {
+    @apply px-4 py-2 bg-primary-600 text-white rounded-lg transition-all duration-200 active:scale-95 flex items-center gap-2;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary-500;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all;
+  }
+  
+  .terminal-text {
+    @apply font-mono text-devops-green;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

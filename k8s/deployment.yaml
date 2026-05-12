@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-devops-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ai-devops-backend
+  template:
+    metadata:
+      labels:
+        app: ai-devops-backend
+    spec:
+      containers:
+      - name: backend
+        image: your-registry/ai-devops-backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MONGO_URI
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: mongo-uri
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-devops-backend-service
+spec:
+  selector:
+    app: ai-devops-backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
