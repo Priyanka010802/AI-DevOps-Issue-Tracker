@@ -66,6 +66,31 @@ docker-compose up --build
 - `server/`: Node.js backend API.
 - `docker-compose.yml`: Multi-container orchestration.
 
+
+### Output
+<img width="1920" height="866" alt="Screenshot (52)" src="https://github.com/user-attachments/assets/b9d40583-ace7-40ca-a9c4-8cf9f1a772bf" />
+
+<img width="1920" height="901" alt="Screenshot (53)" src="https://github.com/user-attachments/assets/0c9c6aeb-0e45-4311-bf31-004e1e49697e" />
+
+<img width="1920" height="849" alt="Screenshot (54)" src="https://github.com/user-attachments/assets/d3f30263-cdb0-4fc7-ba20-ba7a211ac90c" />
+
+<img width="1920" height="884" alt="Screenshot (55)" src="https://github.com/user-attachments/assets/c1203a3c-01aa-4f35-bcae-c324a6d071b4" />
+
+<img width="1920" height="898" alt="Screenshot (56)" src="https://github.com/user-attachments/assets/037a9517-b385-44df-be19-cc8ec3e5a187" />
+
+<img width="1920" height="872" alt="Screenshot (57)" src="https://github.com/user-attachments/assets/7877085f-7dcc-4a7b-8a8b-dfed51e5818b" />
+
+
+
+
+
+
+
+
+
+
+
+
 ## 👤 Author
 
 Priyanka Sangamkar
